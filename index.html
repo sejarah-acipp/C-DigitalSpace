@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C-DigitalSpace</title>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: #005f99;
+      outline: none;
+      text-decoration: underline;
+    }
+
+    main {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 1000px;
+      padding: 36px 24px 0;
+    }
+
+    .search-container {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .search-container h1 {
+      font-size: 2.5rem;
+      color: #004a80;
+      margin-bottom: 16px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      box-shadow: 0 6px 10px rgb(0 0 0 / 0.08);
+      border-radius: 35px;
+      overflow: hidden;
+    }
+
+    input[type="search"] {
+      flex-grow: 1;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      border: none;
+      outline-offset: 3px;
+      font-weight: 500;
+    }
+
+    input[type="search"]:focus {
+      outline: 3px solid #0090ff;
+    }
+
+    button[type="submit"] {
+      background-color: #0078d2;
+      border: none;
+      padding: 0 28px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.0rem;
+      transition: background-color 0.3s ease;
+      border-radius: 0 35px 35px 0;
+    }
+
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background-color: #005ea3;
+      outline-offset: 3px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      font-size: 1.1rem;
+      border-bottom: 3px solid #0078d2;
+      padding-bottom: 6px;
+      color: #004a80;
+      margin-bottom: 34px;
+      user-select: none;
+    }
+
+    section h3 {
+      font-size: 1.8rem;
+      border-bottom: 3px solid #0078d2;
+      display: inline-block;
+      padding-bottom: 6px;
+      color: #004a80;
+      margin-bottom: 34px;
+      user-select: none;
+    }
+
+    /* Featured Collections */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .collection-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .collection-card:hover,
+    .collection-card:focus {
+      transform: scale(1.04);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+      outline: none;
+    }
+
+    .collection-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .collection-info {
+      padding: 16px 20px;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      color: #002e56;
+      font-size: 1.1rem;
+      user-select: none;
+    }
+
+    /* Categories */
+    .categories-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .category-pill {
+      padding: 10px 20px;
+      background-color: #e1f0fb;
+      border-radius: 30px;
+      color: #0078d2;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+
+    .category-pill:hover,
+    .category-pill:focus {
+      background-color: #0078d2;
+      color: #fff;
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+
+      .search-container h1 {
+        font-size: 2rem;
+      }
+
+      form {
+        flex-direction: column;
+      }
+
+      input[type="search"] {
+        border-radius: 35px 35px 0 0;
+      }
+
+      button[type="submit"] {
+        border-radius: 0 0 35px 35px;
+        padding: 14px 0;
+        font-size: 1rem;
+      }
+
+      .collections-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-pill {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header role="banner">
+    <div class="logo" tabindex="0">C-DigitalSpace</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a class="active" href="index.html" tabindex="0" aria-current="page">HOME</a>
+      <a href="berita.html" tabindex="0">BERITA</a>
+      <a href="riset.html" tabindex="0">RISET</a>
+      <a href="wawancara.html" tabindex="0">WAWANCARA</a>
+  </header>
+
+  <main>
+    <section class="search-container" role="search" aria-label="Search content">
+      <h1 tabindex="0">Selamat Datang di C-DigitalSpace</h1>
+      <h2 tabindex="0">Akses data, dokumen, cerita, dan berbagai sumber informasi penting seputar penanganan COVID-19 di Bogor.</h2>
+      <!-- <form onsubmit="event.preventDefault(); alert('Memulai pencarian untuk: ' + document.getElementById('search-input').value);">
+        <input 
+          type="search" 
+          id="search-input" 
+          placeholder="Masukkan kata kunci untuk pencarian..." 
+          aria-label="Kolom pencarian" 
+          required 
+          />
+        <button type="submit" aria-label="Tombol cari">Cari</button>
+      </form> -->
+    </section>
+
+    <section id="berita" aria-labelledby="berita-title">
+      <h3 id="berita-title" tabindex="0">Berita</h3>
+      <div class="collections-grid" aria-label="Riset dan koleksi unggulan">
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset tentang kecerdasan buatan">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1532074205216-c756ec91b8a6?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi kecerdasan buatan" />
+          <div class="collection-info">Riset tentang Kecerdasan Buatan</div>
+        </article>
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset big data dan analitik">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi big data" />
+          <div class="collection-info">Riset Big Data &amp; Analitik</div>
+        </article>
+        </p>
+    </section>
+
+    <section id="riset" aria-labelledby="riset-title">
+      <h3 id="riset-title" tabindex="0">Riset</h3>
+      <div class="collections-grid" aria-label="Riset dan koleksi unggulan">
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset tentang kecerdasan buatan">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1532074205216-c756ec91b8a6?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi kecerdasan buatan" />
+          <div class="collection-info">Riset tentang Kecerdasan Buatan</div>
+        </article>
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset big data dan analitik">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi big data" />
+          <div class="collection-info">Riset Big Data &amp; Analitik</div>
+        </article>
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset keamanan siber">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi keamanan siber" />
+          <div class="collection-info">Riset Keamanan Siber</div>
+        </article>
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset teknologi IoT">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi teknologi IoT" />
+          <div class="collection-info">Riset Teknologi IoT</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="wawancara" aria-labelledby="wawancara-title">
+      <h3 id="wawancara-title" tabindex="0">Wawancara</h3>
+      <div class="collections-grid" aria-label="Riset dan koleksi unggulan">
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset tentang kecerdasan buatan">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1532074205216-c756ec91b8a6?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi kecerdasan buatan" />
+          <div class="collection-info">Riset tentang Kecerdasan Buatan</div>
+        </article>
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset big data dan analitik">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi big data" />
+          <div class="collection-info">Riset Big Data &amp; Analitik</div>
+        </article>
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset keamanan siber">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi keamanan siber" />
+          <div class="collection-info">Riset Keamanan Siber</div>
+        </article>
+        <article class="collection-card" tabindex="0" role="article" aria-label="Riset teknologi IoT">
+          <img class="collection-img"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60"
+            alt="Ilustrasi teknologi IoT" />
+          <div class="collection-info">Riset Teknologi IoT</div>
+        </article>
+        </p>
+    </section>
+
+    <section id="kategori" aria-labelledby="kategori-title">
+      <h3 id="kategori-title" tabindex="0">Kategori Populer</h3>
+      <div class="categories-list" role="list" aria-label="Daftar kategori populer">
+        <div class="category-pill" tabindex="0" role="listitem">Teknologi</div>
+        <div class="category-pill" tabindex="0" role="listitem">Kecerdasan Buatan</div>
+        <div class="category-pill" tabindex="0" role="listitem">Big Data</div>
+        <div class="category-pill" tabindex="0" role="listitem">Keamanan Siber</div>
+        <div class="category-pill" tabindex="0" role="listitem">IoT</div>
+        <div class="category-pill" tabindex="0" role="listitem">Riset Digital</div>
+        <div class="category-pill" tabindex="0" role="listitem">Wawancara</div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 C-DigitalSpace. All rights reserved.</p>
+    <p>
+      <a href="#Home">Home</a> |
+      <a href="#berita">Berita</a> |
+      <a href="#riset">Riset</a> |
+      <a href="#wawancara">Wawancara</a> |     
+    </p>
+  </footer>
+</body>
+
+</html>

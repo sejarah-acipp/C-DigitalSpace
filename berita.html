@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C-DigitalSpace - Berita</title>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fafafa;
+      color: #1a1a1a;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: #005f99;
+      outline: none;
+      text-decoration: underline;
+    }
+
+    main {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 1000px;
+      padding: 36px 24px 0;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h1 {
+      font-size: 1.8rem;
+      border-bottom: 3px solid #0078d2;
+      padding-bottom: 6px;
+      color: #004a80;
+      margin-bottom: 36px;
+      user-select: none;
+    }
+
+    article {
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      border-radius: 10px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    article:hover,
+    article:focus-within {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      outline: none;
+    }
+
+    article h2 {
+      font-size: 1.5rem;
+      color: #004a80;
+      margin-bottom: 8px;
+    }
+
+    article time {
+      display: block;
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    article p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #333;
+      user-select: text;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 24px 16px 0;
+      }
+
+      section h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header role="banner">
+    <div class="logo" tabindex="0">C-DigitalSpace</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="index.html" tabindex="0">HOME</a>
+      <a class="active" href="berita.html" tabindex="0" aria-current="page">BERITA</a>
+      <a href="riset.html" tabindex="0">RISET</a>
+      <a href="wawancara.html" tabindex="0">WAWANCARA</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="berita-title">
+      <h1 id="berita-title" tabindex="0">Berita</h1>
+
+      <article tabindex="0">
+        <a href="assets/berita/Rusuh santunan sampai desa.pdf" target="_blank">
+          <h2>Rusuh Santunan Sampai Desa</h2>
+        </a>
+        <time datetime="2024-06-05">5 Juni 2024</time>
+        <p>
+          Perusahaan teknologi terkemuka mengumumkan peluncuran teknologi kecerdasan buatan terbaru yang dijanjikan akan
+          merevolusi berbagai bidang industri dan kehidupan sehari-hari.
+        </p>
+      </article>
+
+      <article tabindex="0">
+        <a href="assets/berita/Tumpah Tangis Setelah Salah.pdf" target="_blank">
+          <h2>Tumpah Tangis Setelah Salah</h2>
+      </a>
+        <time datetime="2024-05-28">28 Mei 2024</time>
+        <p>
+          Para peneliti berhasil mengembangkan metode baru untuk menganalisis big data yang menghasilkan wawasan lebih
+          mendalam dan cepat dalam berbagai aplikasi bisnis dan kesehatan.
+        </p>
+      </article>
+
+      <article tabindex="0">
+        <a href="assets/berita/Walikota Bogor ODP Corona.pdf" target="blank">
+          <h2>Walikota Bogor ODP Corona</h2>
+        </a>
+        <time datetime="2024-05-15">15 Mei 2024</time>
+        <p>
+          Walikota Bogor bersiap mengisolasi diri, ia termasuk orang ODP terkait virus corona. Hal itu merupakan musibah perjalanan dinasnya bersama rombongan ke negara yang terkena wabah covid
+        </p>
+      </article>
+
+      <article tabindex="0">
+        <a href="assets/berita/Pasien Covid ditanggung BPJS.pdf" target="blank">  
+        <h2>Paien Covid ditanggung BPJS</h2>
+        </a>
+        <time datetime="2024-05-15">15 mei 2004</time>
+        <p>
+          Pasien covid ditanggung BPJS, Siap² vaksinasi berbayar: "nnti khusus utk pembiayaan akan dibebankan kpd pihak yg sakit melalui skema BPJS"- muhadjir Effendy (Menko pembangunan manusia dan kebuadyaan)
+        </p>
+
+      </article>
+
+      <article tabindex="0">
+        <a href="assets/berita/Mahasiswa Gunung Puteri Diisolasi.pdf" target="blank">
+        <h2>Mahasiswa Gunung Puteri Diisolasi</h2>
+        </a>
+        <time datetime="2024-05-15">15 mei 2004</time>
+        <p>20 Januari 2020 mahasiswa asal gunung puteri kabupaten bogor diisolasi di rumah sakit eka hospital, gunung puteri. Dia mengeluhkan demam dan batuk setelah pulang dr Tiongkok
+        </p>
+      </article>
+
+      <article tabindex="0">
+        <a href="assets/berita/Bogor Siaga Satu.pdf" target="_blank">
+          <h2>Bogor Siaga Satu</h2>
+        </a>
+        <time datetime="2024-05-15">15 mei 2004</time>
+        <p> </p>
+      </article>
+
+      <article tabindex="0">
+        <a href="assets/berita/Blom Booster wajib SWAB.pdf" target="blank">
+          <h2>Blom Booster wajib SWAB</h2>
+        </a>
+        <time datetime="2024-05-15">15 mei 2024</time>
+        <p>Belum booster, wajib SWAB. Pengguna Bus-KA membeludak: dilonggarkannya mobilitas dari pemerintah, disambut baik oleh masyarakat. Antusias mudik sdh terlihat. Pemerintah mengeluarkan surat edaran no.16 thn 2022 mengenai ketentuan perjalan selama pandemi.
+        </p>
+      </article>
+
+      <article tabindex="0">
+        <a href="assets/berita/2 Warga Bogor terpapar Omicron XBB.pdf" target="blank">
+          <h2>2 Warga Biogor Terpapar Omicron XBB</h2>
+        </a>
+        <Time datetime="2024-05-15">15 mei 2024</Time>
+        <p>kasus covid melunjak, dinas kesehatan mencata 100 kasus / hari Di kabupaten bogor. Sebelumnya hanya 15-50. Peningkatan tersebut dikarenakan 2 orang yg terpapar covid mutasi Omicron, sehingga kemampuan penularan nya lebih cepat
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 C-DigitalSpace. All rights reserved.</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="berita.html" aria-current="page">Berita</a> |
+      <a href="riset.html">Riset</a> |
+      <a href="wawancara.html">Wawancara</a>
+    </p>
+  </footer>
+</body>
+
+</html>

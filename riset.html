@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C-DigitalSpace - Riset</title>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fafafa;
+      color: #1a1a1a;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: #005f99;
+      outline: none;
+      text-decoration: underline;
+    }
+
+    main {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 1000px;
+      padding: 36px 24px 0;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h1 {
+      font-size: 1.8rem;
+      border-bottom: 3px solid #0078d2;
+      padding-bottom: 6px;
+      color: #004a80;
+      margin-bottom: 36px;
+      user-select: none;
+    }
+
+    article {
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      border-radius: 10px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    article:hover,
+    article:focus-within {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      outline: none;
+    }
+
+    article h2 {
+      font-size: 1.5rem;
+      color: #004a80;
+      margin-bottom: 8px;
+    }
+
+    article time {
+      display: block;
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    article p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #333;
+      user-select: text;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 24px 16px 0;
+      }
+
+      section h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header role="banner">
+    <div class="logo" tabindex="0">C-DigitalSpace</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="index.html" tabindex="0">HOME</a>
+      <a href="berita.html" tabindex="0">BERITA</a>
+      <a class="active" href="riset.html" tabindex="0" aria-current="page">RISET</a>
+      <a href="wawancara.html" tabindex="0">WAWANCARA</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="riset-title">
+      <h1 id="riset-title" tabindex="0">Riset</h1>
+
+      <article tabindex="0">
+        <h2>Inovasi Kecerdasan Buatan untuk Masa Depan</h2>
+        <time datetime="2024-06-03">3 Juni 2024</time>
+        <p>
+          Penelitian terbaru menunjukkan bagaimana algoritma machine learning dapat meningkatkan efisiensi sistem
+          industri dan transportasi secara signifikan.
+        </p>
+      </article>
+
+      <article tabindex="0">
+        <h2>Analisis Big Data dalam Pengembangan Kebijakan Publik</h2>
+        <time datetime="2024-05-25">25 Mei 2024</time>
+        <p>
+          Studi ini mengevaluasi penggunaan data besar untuk membantu pembuat kebijakan dalam merancang intervensi
+          sosial yang lebih tepat sasaran.
+        </p>
+      </article>
+
+      <article tabindex="0">
+        <h2>Keamanan Siber di Era Internet of Things</h2>
+        <time datetime="2024-05-18">18 Mei 2024</time>
+        <p>
+          Riset ini menginvestigasi tantangan keamanan pada perangkat IoT dan mengusulkan solusi berbasis enkripsi serta
+          autentikasi tingkat lanjut.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2024 C-DigitalSpace. All rights reserved.</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="berita.html">Berita</a> |
+      <a href="riset.html" aria-current="page">Riset</a> |
+      <a href="wawancara.html">Wawancara</a>
+    </p>
+  </footer>
+</body>
+
+</html>
